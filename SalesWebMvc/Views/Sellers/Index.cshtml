@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Seller> 
+
+<br />
+<p>
+    <a class="btn btn-dark" asp-controller="Sellers" asp-action="Create" >Add Seller</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(s => s.Name)</th>
+                <th scope="col">@Html.DisplayNameFor(s => s.Email)</th>
+                <th scope="col">@Html.DisplayNameFor(s => s.BirthDate)</th>
+                <th scope="col">@Html.DisplayNameFor(s => s.BaseSalary)</th>
+                <th scope="col"></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Seller obj in Model)
+            {
+                <tr>
+                    <td>@obj.Name</td>
+                    <td>@obj.Email</td>
+                    <td>@obj.BirthDate</td>
+                    <td>@obj.BaseSalary</td>
+                    <td>
+                        <a class="btn btn-info" asp-controller="Sellers" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+                        <a class="btn btn-secondary" asp-controller="Sellers" asp-action="Details" asp-route-id="@obj.Id">Detais</a>
+                        <a class="btn btn-danger" asp-controller="Sellers" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

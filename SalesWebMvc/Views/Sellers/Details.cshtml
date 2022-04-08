@@ -1,0 +1,28 @@
+﻿@model Seller
+
+@{ViewData["Title"] = "Details";}
+
+<br />
+<h2>@ViewData["Title"]</h2>
+<br />
+<hr />
+<dl class="dl-horizontal">
+    <dt>@Html.DisplayNameFor(obj => obj.Name)</dt>
+    <dd>@Html.DisplayFor(obj => obj.Name)</dd>
+
+    <dt>@Html.DisplayNameFor(obj => obj.Department.Name)</dt>
+    <dd>@Html.DisplayFor(obj => obj.Department.Name)</dd>
+
+    <dt>@Html.DisplayNameFor(obj => obj.BirthDate)</dt>
+    <dd>@Html.DisplayFor(obj => obj.BirthDate)</dd>
+
+    <dt>@Html.DisplayNameFor(obj => obj.Email)</dt>
+    <dd>@Html.DisplayFor(obj => obj.Email)</dd>
+
+    <dt>@Html.DisplayNameFor(obj => obj.BaseSalary)</dt>
+    <dd>@Html.DisplayFor(obj => obj.BirthDate)</dd>
+
+</dl>
+
+<a class="btn btn-secondary" asp-controller="Sellers" asp-action="Edit">Edit</a>
+<a class="btn btn-secondary" asp-controller="Sellers"  asp-action="Index">Voltar</a>
