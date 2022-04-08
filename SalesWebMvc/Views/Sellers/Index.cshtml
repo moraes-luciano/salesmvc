@@ -20,10 +20,10 @@
             @foreach (Seller obj in Model)
             {
                 <tr>
-                    <td>@obj.Name</td>
-                    <td>@obj.Email</td>
-                    <td>@obj.BirthDate</td>
-                    <td>@obj.BaseSalary</td>
+                    <td>@Html.DisplayFor(s=> obj.Name)</td>
+                    <td>@Html.DisplayFor(s => obj.Email)</td>
+                    <td>@Html.DisplayFor(s => obj.BirthDate)</td>
+                    <td>@Html.DisplayFor(s => obj.BaseSalary)</td>
                     <td>
                         <a class="btn btn-info" asp-controller="Sellers" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
                         <a class="btn btn-secondary" asp-controller="Sellers" asp-action="Details" asp-route-id="@obj.Id">Detais</a>
