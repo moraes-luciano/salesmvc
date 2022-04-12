@@ -11,11 +11,15 @@ namespace SalesWebMvc.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        
+
+        [Required(ErrorMessage =("{0} is required"))]
+        [StringLength(20, MinimumLength =3, ErrorMessage ="{0} size should be between {2} and {1} characters")]
         public string Name { get; set; }
         
         [Display(Name = "E-mail")]
+        [Required(ErrorMessage = "{0} is required")]
         [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage ="Enter a valid e-mail")]
         public string Email { get; set; }
         
         [Display(Name = "Birth Date")]
@@ -24,7 +28,9 @@ namespace SalesWebMvc.Models
         public DateTime BirthDate { get; set; }
         
         [Display(Name = "Base Salary")]
+        [Required(ErrorMessage ="{0} is required")]
         [DataType(DataType.Currency)]
+        [Range(1100.0,5000.0, ErrorMessage ="{0} must be from {1} to {2}")]
         [DisplayFormat(DataFormatString ="{0:F2}")]
         public decimal BaseSalary { get; set; }
         
