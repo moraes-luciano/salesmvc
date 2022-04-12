@@ -40,8 +40,15 @@ namespace SalesWebMvc.Services
             Seller seller = await _dbContext.Seller.FindAsync(id);
             if(seller != null)
             {
-                _dbContext.Seller.Remove(seller);
-                await _dbContext.SaveChangesAsync();
+                try
+                {
+                    _dbContext.Seller.Remove(seller);
+                    await _dbContext.SaveChangesAsync();
+                }
+                catch(DbUpdateException e)
+                {
+                    throw new IntegrityException("Can't delete seller because he/she has sales");
+                }
             }
            
         }
