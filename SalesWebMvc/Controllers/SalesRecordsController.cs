@@ -44,9 +44,6 @@ namespace SalesWebMvc.Controllers
             return View(salesRecords);
         }
 
-        public IActionResult GroupSearch()
-        {
-            return View();
-        }
+       
     }
 }

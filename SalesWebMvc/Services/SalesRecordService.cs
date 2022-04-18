@@ -30,5 +30,7 @@ namespace SalesWebMvc.Services
             List<SalesRecord> salesRecords = await result.ToListAsync();
             return (salesRecords);
         }
+
+ 
     }
 }
